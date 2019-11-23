@@ -1,7 +1,6 @@
 __all__ = ['Param', 'anno_parser', 'call_parse', 'str2bool']
 
-import inspect,sys,functools
-import argparse
+import inspect,sys,functools,sys,argparse
 
 def str2bool(v):
     if isinstance(v, bool): return v
@@ -38,6 +37,6 @@ def call_parse(func):
         args = anno_parser(func).parse_args()
         func(**args.__dict__)
     name = inspect.currentframe().f_back.f_globals['__name__']
-    if name == "__main__": _f()
+    if name == "__main__" and sys.stdin.isatty(): _f()
     return _f
 
