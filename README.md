@@ -23,7 +23,8 @@ Here's a complete example - it's provided in the fastscript repo as `examples/te
 ```python
 from fastscript import *
 @call_parse
-def main(msg:Param("The message", str), upper:Param("Convert to uppercase?", str2bool)=False):
+def main(msg:Param("The message", str),
+         upper:Param("Convert to uppercase?", str2bool)=False):
     print(msg.upper() if upper else msg)
 ````
 
@@ -35,7 +36,7 @@ usage: test_fastscript.py [-h] [--upper UPPER] msg
 test_fastscript.py: error: the following arguments are required: msg
 ```
 
-As you see, we didn't need any `if __name__ == "__main__"`, we didn't have to parse arguments, we just wrote a function, added a decorator to it, and added some annotations to our function's parameters. As a bonus, we can also use this function directly from Python - it's not just for command line scripts!
+As you see, we didn't need any `if __name__ == "__main__"`, we didn't have to parse arguments, we just wrote a function, added a decorator to it, and added some annotations to our function's parameters. As a bonus, we can also use this function directly from a REPL such as Jupyter Notebook - it's not just for command line scripts!
 
 ## Param
 
@@ -50,3 +51,4 @@ There's a really nice feature of pip/setuptools that lets you create commandline
 You don't actually have to write a `setup.py` yourself. Instead, just copy the setup.py we have in the fastscript repo, and copy `settings.ini` as well. Then modify `settings.ini` as appropriate for your module/script. Then, to install your script directly, you can type `pip install -e .`. Your script, when installed this way (it's called an [editable install](http://codumentary.blogspot.com/2014/11/python-tip-of-year-pip-install-editable.html), will automatically be up to date even if you edit it - there's no need to reinstall it after editing.
 
 You can even make your module and script available for installation directly from pip by running `make`. There shouldn't be anything else to edit - you just need to make sure you have an account on [pypi](https://pypi.org/) and have set up a [.pypirc file](https://docs.python.org/3.3/distutils/packageindex.html#the-pypirc-file).
+

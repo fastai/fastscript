@@ -1,8 +1,8 @@
-__all__ = ['Param', 'anno_parser', 'call_parse', 'str2bool']
+__all__ = ['Param', 'anno_parser', 'call_parse', 'bool_arg']
 
 import inspect,sys,functools,sys,argparse
 
-def str2bool(v):
+def bool_arg(v):
     if isinstance(v, bool): return v
     if v.lower() in ('yes', 'true', 't', 'y', '1'): return True
     elif v.lower() in ('no', 'false', 'f', 'n', '0'): return False
@@ -33,10 +33,13 @@ def anno_parser(func):
 
 def call_parse(func):
     "Decorator to create a simple CLI from `func` using `anno_parser`"
+    mod = inspect.getmodule(inspect.currentframe().f_back)
+    if not mod: return func
+
+    @functools.wraps(func)
     def _f(*args, **kwargs):
         args = anno_parser(func).parse_args()
         func(**args.__dict__)
-    name = inspect.currentframe().f_back.f_globals['__name__']
-    if name == "__main__" and sys.stdin.isatty(): _f()
-    return _f
+    if mod.__name__=="__main__": return _f()
+    else: return _f
 
