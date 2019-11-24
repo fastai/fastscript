@@ -4,7 +4,7 @@ A fast way to turn your python function into a script.
 
 Part of [fast.ai](https://www.fast.ai)'s toolkit for delightful developer experiences. Written by Jeremy Howard.
 
-## Installation:
+## Installation
 
 ```
 pip install fastscript
