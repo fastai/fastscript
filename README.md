@@ -24,7 +24,7 @@ Here's a complete example - it's provided in the fastscript repo as `examples/te
 from fastscript import *
 @call_parse
 def main(msg:Param("The message", str),
-         upper:Param("Convert to uppercase?", str2bool)=False):
+         upper:Param("Convert to uppercase?", bool_arg)=False):
     print(msg.upper() if upper else msg)
 ````
 
