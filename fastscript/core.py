@@ -47,8 +47,8 @@ def anno_parser(func, prog=None, from_name=False):
 #Cell
 def args_from_prog(func, prog):
     "Extract args from `prog`"
-    if '__' in prog: _,prog = prog.split('__', 1)
-    progsp = prog.split("_")
+    if '##' in prog: _,prog = prog.split('##', 1)
+    progsp = prog.split("#")
     args = {progsp[i]:progsp[i+1] for i in range(0, len(progsp), 2)}
     for k,v in args.items():
         t = func.__annotations__.get(k, Param()).type
