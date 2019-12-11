@@ -1,4 +1,4 @@
-from .fastscript import *
+from .core import *
 
 @call_parse
 def main(msg:Param("The message", str),
