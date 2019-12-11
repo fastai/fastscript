@@ -1,2 +1,2 @@
-from .fastscript import *
+from .core import *
 
