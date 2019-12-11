@@ -7,24 +7,12 @@ entries:
 - folders:
   - folderitems:
     - output: web,pdf
-      title: Export to modules
-      url: /export
+      title: Overview
+      url: /
     - output: web,pdf
-      title: Convert to html
-      url: /export2html
-    - output: web,pdf
-      title: Show doc
-      url: /showdoc
-    - output: web,pdf
-      title: Test functions
-      url: /test
-    - output: web,pdf
-      title: Core functions
+      title: fastscript
       url: /core
-    - output: web,pdf
-      title: Command line functions
-      url: /cli
     output: web
-    title: Notebook
+    title: fastscript
   output: web
   title: Sidebar
