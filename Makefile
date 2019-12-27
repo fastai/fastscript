@@ -1,3 +1,24 @@
+SRC = $(wildcard nbs/*.ipynb)
+
+all: fastscript docs
+
+fastscript: $(SRC)
+	nbdev_build_lib
+	touch fastscript
+
+docs_serve: docs
+	cd docs && bundle exec jekyll serve
+
+docs: $(SRC)
+	nbdev_build_docs
+	touch docs
+
+test:
+	nbdev_test_nbs
+
+release: pypi
+	nbdev_bump_version
+
 pypi: dist
 	twine upload --repository pypi dist/*
 
