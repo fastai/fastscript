@@ -1,6 +1,7 @@
 ---
 
 title: fastscript
+
 keywords: fastai
 sidebar: home_sidebar
 
@@ -25,6 +26,19 @@ summary: "API details"
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_eq</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span> <span class="k">assert</span> <span class="n">a</span><span class="o">==</span><span class="n">b</span><span class="p">,</span><span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -38,7 +52,7 @@ summary: "API details"
 <div class="output_markdown rendered_html output_subarea ">
 <h2 id="Param" class="doc_header"><code>class</code> <code>Param</code><a href="https://github.com/fastai/fastscript/tree/master/fastscript/core.py#L10" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Param</code>(<strong><code>help</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>opt</code></strong>=<em><code>True</code></em>, <strong><code>action</code></strong>=<em><code>None</code></em>, <strong><code>nargs</code></strong>=<em><code>None</code></em>, <strong><code>const</code></strong>=<em><code>None</code></em>, <strong><code>choices</code></strong>=<em><code>None</code></em>, <strong><code>required</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
-<p>A parameter in a function used in <a href="/core.html#anno_parser"><code>anno_parser</code></a> or <a href="/core.html#call_parse"><code>call_parse</code></a></p>
+<p>A parameter in a function used in <a href="/fastscript/core#anno_parser"><code>anno_parser</code></a> or <a href="/fastscript/core#call_parse"><code>call_parse</code></a></p>
 
 </div>
 
@@ -50,7 +64,7 @@ summary: "API details"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Each parameter in your function should have an annotation <code>Param(...)</code>. You can pass the following when calling <a href="/core.html#Param"><code>Param</code></a>: <code>help</code>,<code>type</code>,<code>opt</code>,<code>action</code>,<code>nargs</code>,<code>const</code>,<code>choices</code>,<code>required</code> (i.e. it takes the same parameters as <code>argparse.ArgumentParser.add_argument</code>, plus <code>opt</code>). Except for <code>opt</code>, all of these are just passed directly to <code>argparse</code>, so you have all the power of that module at your disposal. Generally you'll want to pass at least <code>help</code> (since this is provided as the help string for that parameter) and <code>type</code> (to ensure that you get the type of data you expect).</p>
+<p>Each parameter in your function should have an annotation <code>Param(...)</code>. You can pass the following when calling <a href="/fastscript/core#Param"><code>Param</code></a>: <code>help</code>,<code>type</code>,<code>opt</code>,<code>action</code>,<code>nargs</code>,<code>const</code>,<code>choices</code>,<code>required</code> (i.e. it takes the same parameters as <code>argparse.ArgumentParser.add_argument</code>, plus <code>opt</code>). Except for <code>opt</code>, all of these are just passed directly to <code>argparse</code>, so you have all the power of that module at your disposal. Generally you'll want to pass at least <code>help</code> (since this is provided as the help string for that parameter) and <code>type</code> (to ensure that you get the type of data you expect).</p>
 <p><code>opt</code> is a bool that defines whether a param is optional or required (positional) - but you'll generally not need to set this manually, because fastscript will set it for you automatically based on <em>default</em> values. You should provide a default (after the <code>=</code>) for any <em>optional</em> parameters. If you don't provide a default for a parameter, then it will be a <em>positional</em> parameter.</p>
 
 </div>
@@ -85,7 +99,7 @@ summary: "API details"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="bool_arg" class="doc_header"><code>bool_arg</code><a href="https://github.com/fastai/fastscript/tree/master/fastscript/core.py#L29" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>bool_arg</code>(<strong><code>v</code></strong>)</p>
 </blockquote>
-<p>Use as <code>type</code> for <a href="/core.html#Param"><code>Param</code></a> to get <code>bool</code> behavior</p>
+<p>Use as <code>type</code> for <a href="/fastscript/core#Param"><code>Param</code></a> to get <code>bool</code> behavior</p>
 
 </div>
 
@@ -124,7 +138,7 @@ summary: "API details"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="anno_parser" class="doc_header"><code>anno_parser</code><a href="https://github.com/fastai/fastscript/tree/master/fastscript/core.py#L37" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>anno_parser</code>(<strong><code>func</code></strong>, <strong><code>prog</code></strong>=<em><code>None</code></em>, <strong><code>from_name</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
-<p>Look at params (annotated with <a href="/core.html#Param"><code>Param</code></a>) in func and return an <code>ArgumentParser</code></p>
+<p>Look at params (annotated with <a href="/fastscript/core#Param"><code>Param</code></a>) in func and return an <code>ArgumentParser</code></p>
 
 </div>
 
@@ -136,7 +150,7 @@ summary: "API details"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This converts a function with parameter annotations of type <a href="/core.html#Param"><code>Param</code></a> into an <code>argparse.ArgumentParser</code> object. Function arguments with a default provided are optional, and other arguments are positional.</p>
+<p>This converts a function with parameter annotations of type <a href="/fastscript/core#Param"><code>Param</code></a> into an <code>argparse.ArgumentParser</code> object. Function arguments with a default provided are optional, and other arguments are positional.</p>
 
 </div>
 </div>
@@ -212,7 +226,7 @@ optional arguments:
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Sometimes it's convenient to extract arguments from the actual name of the called program. <a href="/core.html#args_from_prog"><code>args_from_prog</code></a> will do this, assuming that names and values of the params are separated by an underscore. Optionally there can also be a prefix separated by <code>__</code> (double underscore).</p>
+<p>Sometimes it's convenient to extract arguments from the actual name of the called program. <a href="/fastscript/core#args_from_prog"><code>args_from_prog</code></a> will do this, assuming that names and values of the params are separated by a <code>#</code>. Optionally there can also be a prefix separated by <code>##</code> (double underscore).</p>
 
 </div>
 </div>
@@ -223,8 +237,8 @@ optional arguments:
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;baa&#39;</span><span class="p">}</span>
-<span class="n">test_eq</span><span class="p">(</span><span class="n">args_from_prog</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;foo__a_0_b_baa&#39;</span><span class="p">),</span> <span class="n">exp</span><span class="p">)</span>
-<span class="n">test_eq</span><span class="p">(</span><span class="n">args_from_prog</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;a_0_b_baa&#39;</span><span class="p">),</span> <span class="n">exp</span><span class="p">)</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">args_from_prog</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;foo##a#0#b#baa&#39;</span><span class="p">),</span> <span class="n">exp</span><span class="p">)</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">args_from_prog</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;a#0#b#baa&#39;</span><span class="p">),</span> <span class="n">exp</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -246,7 +260,7 @@ optional arguments:
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="call_parse" class="doc_header"><code>call_parse</code><a href="https://github.com/fastai/fastscript/tree/master/fastscript/core.py#L59" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>call_parse</code>(<strong><code>func</code></strong>)</p>
 </blockquote>
-<p>Decorator to create a simple CLI from <code>func</code> using <a href="/core.html#anno_parser"><code>anno_parser</code></a></p>
+<p>Decorator to create a simple CLI from <code>func</code> using <a href="/fastscript/core#anno_parser"><code>anno_parser</code></a></p>
 
 </div>
 
@@ -258,7 +272,7 @@ optional arguments:
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is the main way to use <code>fastscript</code>; decorate your function with <a href="/core.html#call_parse"><code>call_parse</code></a>, add <a href="/core.html#Param"><code>Param</code></a> annotations as shown above, and it can then be used as a script.</p>
+<p>This is the main way to use <code>fastscript</code>; decorate your function with <a href="/fastscript/core#call_parse"><code>call_parse</code></a>, add <a href="/fastscript/core#Param"><code>Param</code></a> annotations as shown above, and it can then be used as a script.</p>
 
 </div>
 </div>
