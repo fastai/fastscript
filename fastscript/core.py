@@ -63,6 +63,9 @@ def call_parse(func):
 
     @functools.wraps(func)
     def _f(*args, **kwargs):
+        mod = inspect.getmodule(inspect.currentframe().f_back)
+        if not mod: return func(*args, **kwargs)
+
         p = anno_parser(func)
         args = p.parse_args()
         xtra = getattr(args, 'xtra', None)
