@@ -51,7 +51,7 @@ summary: "A fast way to turn your python function into a script."
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Sometimes, you want to create a quick script, either for yourself, or for others. But in Python, that involves a whole lot of boilerplate and ceremony, especially if you want to support command line arguments, provide help, and other niceties. You can use <a href="https://docs.python.org/3/library/argparse.html">argparse</a> for this purpose, which comes with Python, but it's complex and verbose.</p>
-<p><a href="/fastscript"><code>fastscript</code></a> makes life easier. There are much fancier modules to help you write scripts (we recommend <a href="https://github.com/google/python-fire">Python Fire</a>, and <a href="https://click.palletsprojects.com/en/7.x/">Click</a> is also popular), but fastscript is very fast and very simple. In fact, it's &lt;50 lines of code! Basically, it's just a little wrapper around <code>argparse</code> that uses modern Python features and some thoughtful defaults to get rid of the boilerplate.</p>
+<p><code>fastscript</code> makes life easier. There are much fancier modules to help you write scripts (we recommend <a href="https://github.com/google/python-fire">Python Fire</a>, and <a href="https://click.palletsprojects.com/en/7.x/">Click</a> is also popular), but fastscript is very fast and very simple. In fact, it's &lt;50 lines of code! Basically, it's just a little wrapper around <code>argparse</code> that uses modern Python features and some thoughtful defaults to get rid of the boilerplate.</p>
 
 </div>
 </div>
@@ -116,6 +116,51 @@ test_fastscript.py: error: the following arguments are required: msg</code></pre
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Importing-Command-Line-Functions">Importing Command Line Functions<a class="anchor-link" href="#Importing-Command-Line-Functions">&#182;</a></h2><p>Sometimes it might be useful to also be able to import command-line functions and use them as regular functions.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">fastscript.test_cli</span> <span class="kn">import</span> <span class="n">main</span>
+<span class="n">main</span><span class="p">(</span><span class="s2">&quot;This can also be used as a regular imported function.&quot;</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>THIS CAN ALSO BE USED AS A REGULAR IMPORTED FUNCTION.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;THIS CAN ALSO BE USED AS A REGULAR IMPORTED FUNCTION.&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 </div>
  
