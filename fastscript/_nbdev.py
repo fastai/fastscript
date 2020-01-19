@@ -10,7 +10,7 @@ index = {"Param": "00_core.ipynb",
 
 modules = ["core.py"]
 
-doc_url = "https://fastai.github.io/fastscript/"
+doc_url = "https://fastscript.fast.ai/"
 
 git_url = "https://github.com/fastai/fastscript/tree/master/"
 
