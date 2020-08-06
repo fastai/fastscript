@@ -1,3 +1,6 @@
+.ONESHELL:
+SHELL := /bin/bash
+
 SRC = $(wildcard nbs/*.ipynb)
 
 all: fastscript docs
