@@ -20,12 +20,7 @@ test:
 	nbdev_test_nbs
 
 release: pypi
-	nbdev_conda_package
-	cd conda
-	conda build fastscript
-	anaconda upload -u fastai ${CONDA_PREFIX}/conda-bld/noarch/*-py_0.tar.bz2
-	rm ${CONDA_PREFIX}/conda-bld/noarch/*-py_0.tar.bz2
-	cd ..
+	nbdev_conda_package --upload_user fastai
 	nbdev_bump_version
 
 pypi: dist
