@@ -57,15 +57,8 @@ Sometimes it might be useful to also be able to import command-line functions an
 ```python
 from fastscript.test_cli import main
 
-main("This can also be used as a regular imported function.", upper=True)
+main("This can also be used as a regular imported function.", upper=True);
 ```
 
     THIS CAN ALSO BE USED AS A REGULAR IMPORTED FUNCTION.
-
-
-
-
-
-    'THIS CAN ALSO BE USED AS A REGULAR IMPORTED FUNCTION.'
-
 
