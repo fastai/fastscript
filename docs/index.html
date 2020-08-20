@@ -6,6 +6,8 @@ keywords: fastai
 sidebar: home_sidebar
 
 summary: "A fast way to turn your python function into a script."
+description: "A fast way to turn your python function into a script."
+nb_path: "index.ipynb"
 ---
 <!--
 
@@ -18,10 +20,14 @@ summary: "A fast way to turn your python function into a script."
 -->
 
 <div class="container" id="notebook-container">
+        
+    {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Part of <a href="https://www.fast.ai">fast.ai</a>'s toolkit for delightful developer experiences. Written by Jeremy Howard.</p>
@@ -31,7 +37,7 @@ summary: "A fast way to turn your python function into a script."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Install">Install<a class="anchor-link" href="#Install">&#182;</a></h2>
+<h2 id="Install">Install<a class="anchor-link" href="#Install"> </a></h2>
 </div>
 </div>
 </div>
@@ -44,7 +50,7 @@ summary: "A fast way to turn your python function into a script."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Overview">Overview<a class="anchor-link" href="#Overview">&#182;</a></h2>
+<h2 id="Overview">Overview<a class="anchor-link" href="#Overview"> </a></h2>
 </div>
 </div>
 </div>
@@ -58,7 +64,7 @@ summary: "A fast way to turn your python function into a script."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h2>
+<h2 id="Example">Example<a class="anchor-link" href="#Example"> </a></h2>
 </div>
 </div>
 </div>
@@ -90,13 +96,13 @@ test_fastscript.py: error: the following arguments are required: msg</code></pre
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Param">Param<a class="anchor-link" href="#Param">&#182;</a></h2>
+<h2 id="Param">Param<a class="anchor-link" href="#Param"> </a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Each parameter in your function should have an annotation <code>Param(...)</code> (as in the example above). You can pass the following when calling <a href="/core#Param"><code>Param</code></a>: <code>help</code>,<code>type</code>,<code>opt</code>,<code>action</code>,<code>nargs</code>,<code>const</code>,<code>choices</code>,<code>required</code> . Except for <code>opt</code>, all of these are just passed directly to <code>argparse</code>, so you have all the power of that module at your disposal. Generally you'll want to pass at least <code>help</code> (since this is provided as the help string for that parameter) and <code>type</code> (to ensure that you get the type of data you expect). <code>opt</code> is a bool that defines whether a param is optional or required (positional) - but you'll generally not need to set this manually, because fastscript will set it for you automatically based on <em>default</em> values.</p>
+<p>Each parameter in your function should have an annotation <code>Param(...)</code> (as in the example above). You can pass the following when calling <a href="/core.html#Param"><code>Param</code></a>: <code>help</code>,<code>type</code>,<code>opt</code>,<code>action</code>,<code>nargs</code>,<code>const</code>,<code>choices</code>,<code>required</code> . Except for <code>opt</code>, all of these are just passed directly to <code>argparse</code>, so you have all the power of that module at your disposal. Generally you'll want to pass at least <code>help</code> (since this is provided as the help string for that parameter) and <code>type</code> (to ensure that you get the type of data you expect). <code>opt</code> is a bool that defines whether a param is optional or required (positional) - but you'll generally not need to set this manually, because fastscript will set it for you automatically based on <em>default</em> values.</p>
 <p>You should provide a default (after the <code>=</code>) for any <em>optional</em> parameters. If you don't provide a default for a parameter, then it will be a <em>positional</em> parameter.</p>
 
 </div>
@@ -104,7 +110,7 @@ test_fastscript.py: error: the following arguments are required: msg</code></pre
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="setuptools-scripts">setuptools scripts<a class="anchor-link" href="#setuptools-scripts">&#182;</a></h2>
+<h2 id="setuptools-scripts">setuptools scripts<a class="anchor-link" href="#setuptools-scripts"> </a></h2>
 </div>
 </div>
 </div>
@@ -119,11 +125,13 @@ test_fastscript.py: error: the following arguments are required: msg</code></pre
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Importing-Command-Line-Functions">Importing Command Line Functions<a class="anchor-link" href="#Importing-Command-Line-Functions">&#182;</a></h2><p>Sometimes it might be useful to also be able to import command-line functions and use them as regular functions.</p>
+<h2 id="Importing-Command-Line-Functions">Importing Command Line Functions<a class="anchor-link" href="#Importing-Command-Line-Functions"> </a></h2><p>Sometimes it might be useful to also be able to import command-line functions and use them as regular functions.</p>
 
 </div>
 </div>
 </div>
+    {% raw %}
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -162,6 +170,8 @@ test_fastscript.py: error: the following arguments are required: msg</code></pre
 </div>
 
 </div>
+    {% endraw %}
+
 </div>
  
 

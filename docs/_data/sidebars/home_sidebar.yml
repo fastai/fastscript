@@ -11,7 +11,7 @@ entries:
       url: /
     - output: web,pdf
       title: fastscript
-      url: /core
+      url: core.html
     output: web
     title: fastscript
   output: web
