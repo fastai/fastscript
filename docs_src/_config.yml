@@ -59,7 +59,4 @@ defaults:
 sidebars:
 - home_sidebar
 
-theme: jekyll-theme-cayman
-
-
 baseurl: /
