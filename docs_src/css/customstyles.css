@@ -141,6 +141,11 @@ margin-top: -40px
     max-height: 100%;
 }
 
+.post-content figure img {
+    margin: 12px auto 3px auto;
+    display: block;
+}
+
 .post-content ol li, .post-content ul li {
     /*margin: 10px 0px;*/
 }
@@ -523,14 +528,12 @@ dl.dl-horizontal dd {
 }
 
 figcaption {
-
-    padding-bottom:12px;
-    padding-top:6px;
+    padding-bottom:0px;
+    padding-top:0px;
     max-width: 90%;
-    margin-bottom:20px;
+    margin: 6px auto 18px auto;
     font-style: italic;
     color: gray;
-
 }
 
 .testing {
@@ -1281,7 +1284,8 @@ h4.panel-title {
     color: #000
 }
 blockquote {
-        font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+        font-size: 1em;
+        font-style: italic;
 }
 blockquote code {
         background-color: white;
