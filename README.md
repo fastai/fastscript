@@ -1,8 +1,8 @@
-# fastscript
-> A fast way to turn your python function into a script.
+# fastscript - DEPRECATED
+> Please use fastcore.script instead
 
 
-Part of [fast.ai](https://www.fast.ai)'s toolkit for delightful developer experiences.
+<span style="color:red"> **All functionality from this module has been moved to `fastcore.script`. Please use that instead.** </span>
 
 ## Install
 
