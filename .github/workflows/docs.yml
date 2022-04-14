@@ -21,7 +21,14 @@ jobs:
     container: fastai/fastai
     steps:
     - uses: actions/checkout@v2
-    - uses: fastai/workflows/conda-env@master
+    - name: setup conda
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        python-version: 3.9
+        mamba-version: "*"
+        channels: conda-forge,defaults
+        channel-priority: true
+        activate-environment: anaconda-client-env
     - uses: fastai/workflows/build-docs@master
       with:
         username: jeremyphoward
